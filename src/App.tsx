@@ -1,17 +1,16 @@
 import { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "./App.css";
 
-import AddTutorial from "./components/add-tutorial.component";
-import Tutorial from "./components/tutorial.component";
-import TutorialsList from "./components/tutorials-list.component";
+import ReferralsPage from "./Views/ReferralsPage";
+import LandingPage from "./Views/LandingPage";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/tutorials"} className="navbar-brand">
             bezKoder
           </Link>
@@ -27,15 +26,15 @@ class App extends Component {
               </Link>
             </li>
           </div>
-        </nav>
+        </nav> */}
 
-        <div className="container mt-3">
+        {/* <div className="container mt-3"> */}
           <Switch>
-            <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddTutorial} />
-            <Route path="/tutorials/:id" component={Tutorial} />
+            <Route exact path={["/", "/ref/:id"]} component={LandingPage} />
+            {/* <Route exact path="/add" component={AddTutorial} /> */}
+            <Route exact path="/referrals/:id" component={ReferralsPage} />
           </Switch>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
