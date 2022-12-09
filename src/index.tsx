@@ -6,8 +6,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals'; 
 
+
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  // <BrowserRouter basename={process.env.PUBLIC_URL}> for github pages
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

@@ -1,8 +1,7 @@
-{
-  "homepage": "https://remymess.github.io/react-axios-typescript-example/",
+{ß
   "name": "react-axios-typescript-example",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
