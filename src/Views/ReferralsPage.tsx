@@ -148,6 +148,7 @@ export default class ReferralsPage extends Component<Props, State> {
                   >
                     <source src="/ezgif.com-gif-maker.mp4" type="video/mp4"/> 
                 </video>
+
               </Box>
              
              <Box
