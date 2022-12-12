@@ -143,7 +143,7 @@ export default class ReferralsPage extends Component<Props, State> {
                   }}
               >
                 <video 
-                  autoPlay loop muted
+                  autoPlay loop muted playsInline
                   style={{ height: "200%", width: "auto", marginTop: "10px", marginBottom: "10px"}}
                   >
                     <source src="/ezgif.com-gif-maker.mp4" type="video/mp4"/> 

@@ -135,7 +135,7 @@ export default class LandingPage extends Component<Props, State> {
           
           <Box style={{justifyContent: "center"}} width="100%">
               <video 
-              autoPlay loop muted
+              autoPlay loop muted playsInline
               style={
                 this.state.isMobile 
                 ? { height: "20%", width: "100%", marginBottom: "30px", alignSelf: "center"}
