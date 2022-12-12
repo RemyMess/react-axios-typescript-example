@@ -8,8 +8,8 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  // <BrowserRouter basename={process.env.PUBLIC_URL}> for github pages
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  {/* <BrowserRouter> */}
     <App />
   </BrowserRouter>,
   document.getElementById('root')
