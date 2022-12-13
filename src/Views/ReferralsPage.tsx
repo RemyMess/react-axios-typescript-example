@@ -9,6 +9,8 @@ import { Text, Box, Button } from 'grommet';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ReferralPriceCard from "../components/ReferralPriceCard";
 
+import AccountabilityImage from "../assets/social_accountability.png";
+
 import { FaDiscord } from 'react-icons/fa';
 import { Slack, Reddit } from 'grommet-icons';
 
@@ -129,25 +131,31 @@ export default class ReferralsPage extends Component<Props, State> {
 
 
             {/* Section */}
-            <Grid2 container spacing={3} justifyContent="center" paddingLeft={"20px"} paddingRight={"20px"} direction={this.state.isMobile ? "column" : "row"}>
+            <Grid2 container spacing={3} justifyContent="center" paddingLeft={"20px"} paddingRight={"20px"} direction={this.state.isMobile ? "column" : "row"}
+              style={{background: "#DDDDDD"}}
+            >
             <Box
                   style={
                     (this.state.isMobile) ?
                     {
                       width: "100%",
-                      height: "200px",
+                      // height: "200px",
                     }
                     : {
                       width: "50%",
-                      height: 600,
+                      // height: "100px",
                   }}
               >
-                <video 
+                {/* <video 
                   autoPlay loop muted playsInline
                   style={{ height: "200%", width: "auto", marginTop: "10px", marginBottom: "10px"}}
-                  >
-                    <source src="/ezgif.com-gif-maker.mp4" type="video/mp4"/> 
-                </video>
+                  > */}
+                    <img src={AccountabilityImage} width="450px" style={
+                      this.state.isMobile 
+                      ? {alignSelf: "center", justifySelf: "center", alignItems: "center"}
+                      : {alignSelf: "center", justifySelf: "center", alignItems: "center", marginTop: "50px"}
+                      }/> 
+                {/* </video> */}
 
               </Box>
              
@@ -156,7 +164,7 @@ export default class ReferralsPage extends Component<Props, State> {
                     (this.state.isMobile) ? 
                       {
                         width: "100%",
-                        height: 800,
+                        height: 620,
                         backgroundColor: 'primary.dark',
                         textAlign: "center",
                         paddingLeft: "20px",
@@ -164,7 +172,7 @@ export default class ReferralsPage extends Component<Props, State> {
                       }
                       : {
                         width: "50%",
-                        height: 600,
+                        height: 500,
                         backgroundColor: 'primary.dark',
                         textAlign: "center",
                         paddingLeft: "20px",
@@ -175,11 +183,11 @@ export default class ReferralsPage extends Component<Props, State> {
                 <Text size="22px" margin={{bottom: "30px", top: "50px"}}>
                   Don't leave your friends behind 🏃🏽
                 </Text>
-                <Text size="32px" weight="bold" margin={{bottom: "30px"}}>
-                  INVITE FRIENDS AND EARN EXTRA PERKS 🔥
+                <Text size="32px" weight="bold" margin={{bottom: "0px"}}>
+                  INVITE FRIENDS & GET EXTRA PERKS 🔥
                 </Text> 
                 <Text color="grey" size="18px" margin={{top: "15px", bottom: "30px"}}>
-                  Share your unique code with your friends and earn perks for every friend who signs up.
+                  Share your unique link via WhatsApp, Twitter, Telegram, or other media with your friends and earn free habit-building tools for each friend who signs up.
                 </Text>
                   
 
@@ -187,7 +195,7 @@ export default class ReferralsPage extends Component<Props, State> {
 
                 <Box direction={this.state.isMobile ? "column" : "row"} justify="center"
                 >
-                  <input type="text" value = {this.state.share_url} style={{borderRadius: "10px"}}/>
+                  <input type="text" value = {this.state.share_url} style={{borderRadius: "2px"}}/>
                   <Box onClick={() => {
                       navigator.clipboard.writeText(window.location.href);
                     }}
@@ -209,29 +217,31 @@ export default class ReferralsPage extends Component<Props, State> {
                   >
                       <Text size="18px" weight="bold">Copy</Text>
                   </Box>
-                  <WhatsappShareButton
+                  <Box direction="row" justify="center">
+                    <WhatsappShareButton
+                        url={this.state.share_url}
+                        title={"er"}>
+                        <WhatsappIcon
+                          size={40}
+                          round />
+                      </WhatsappShareButton>
+
+                    <TwitterShareButton
                       url={this.state.share_url}
                       title={"er"}>
-                      <WhatsappIcon
+                      <TwitterIcon
                         size={40}
                         round />
-                    </WhatsappShareButton>
+                    </TwitterShareButton>
 
-                  <TwitterShareButton
-                    url={this.state.share_url}
-                    title={"er"}>
-                    <TwitterIcon
-                      size={40}
-                      round />
-                  </TwitterShareButton>
-
-                  <TelegramShareButton
-                    url={this.state.share_url}
-                    title={"er"}>
-                    <TelegramIcon
-                      size={40}
-                      round />
-                  </TelegramShareButton>
+                    <TelegramShareButton
+                      url={this.state.share_url}
+                      title={"er"}>
+                      <TelegramIcon
+                        size={40}
+                        round />
+                    </TelegramShareButton>
+                  </Box>
                 </Box>
 
 
@@ -242,12 +252,23 @@ export default class ReferralsPage extends Component<Props, State> {
           {/* WEB */}
           <Box
             pad="medium"
-            style={{
+            style={
+              this.state.isMobile 
+              ? {
                 width: "100%",
                 height: "100px",
                 // backgroundColor: "white",
-                textAlign: "center" //horizontal
-            }}>
+                textAlign: "center", //horizontal
+                marginTop: "60px"
+              }
+              : {
+                width: "100%",
+                height: "100px",
+                // backgroundColor: "white",
+                textAlign: "center", //horizontal
+                marginTop: "20px"
+              }
+            }>
               <Text size="32px" weight="bold">How does it work?</Text>
           </Box>
 

@@ -84,7 +84,7 @@ export default class ReferralPriceCard extends Component<Props> {
                 direction="column"
                 onClick={()=>{}}
               >
-              <Text alignSelf="center" >Locked <Lock size="14px"/></Text>
+              <Text alignSelf="center" >Claim <Lock size="14px"/></Text>
               </Box>
               ) 
               }
