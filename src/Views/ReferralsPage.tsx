@@ -10,9 +10,11 @@ import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ReferralPriceCard from "../components/ReferralPriceCard";
 
 import AccountabilityImage from "../assets/social_accountability.png";
+import HabitopiaLogoBlack from "../assets/habitopia_logo_black.png";
+
 
 import { FaDiscord } from 'react-icons/fa';
-import { Slack, Reddit } from 'grommet-icons';
+import { Slack, Reddit, Twitter, Instagram} from 'grommet-icons';
 
 import { useMediaQuery } from 'react-responsive'
 
@@ -38,7 +40,8 @@ import {
   WorkplaceShareButton,
   TwitterIcon,
   WhatsappIcon,
-  TelegramIcon
+  TelegramIcon,
+  RedditIcon
 } from "react-share";
 
 
@@ -71,7 +74,7 @@ export default class ReferralsPage extends Component<Props, State> {
       email_id: "",
       id: this.props.match.params.id ? this.props.match.params.id : "",
       n_referral: 0,
-      share_url: this.props.match.params.id ? ("http://localhost:8081/ref/" + this.props.match.params.id) : "http://localhost:8081/ref/"
+      share_url: this.props.match.params.id ? ("http://2023resolutions.me/ref/" + this.props.match.params.id) : "http://2023resolutions.me/ref/"
     };
   }
 
@@ -187,7 +190,7 @@ export default class ReferralsPage extends Component<Props, State> {
                   INVITE FRIENDS & GET EXTRA PERKS 🔥
                 </Text> 
                 <Text color="grey" size="18px" margin={{top: "15px", bottom: "30px"}}>
-                  Share your unique link via WhatsApp, Twitter, Telegram, or other media with your friends and earn free habit-building tools for each friend who signs up.
+                  Share your unique link via WhatsApp, Twitter, Telegram, or other media with your friends and earn free products for each friend who signs up.
                 </Text>
                   
 
@@ -197,7 +200,7 @@ export default class ReferralsPage extends Component<Props, State> {
                 >
                   <input type="text" value = {this.state.share_url} style={{borderRadius: "2px"}}/>
                   <Box onClick={() => {
-                      navigator.clipboard.writeText(window.location.href);
+                      navigator.clipboard.writeText(this.state.share_url);
                     }}
                     background="orange"
                     style={{
@@ -275,48 +278,62 @@ export default class ReferralsPage extends Component<Props, State> {
 
           <Grid2 container spacing={3} alignContent="center" marginBottom={"40px"}
           justifyContent="center">
+            <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
+              <ReferralPriceCard
+                referral_n_requirement={0}
+                price_title="Accountability groups 👥🙌🏼"
+                price_description="Stick with a team in groups of ~25!"
+                claim_url="https://forms.gle/yiJVYfD2BTyju4Df8"
+                claim_msg="Join!"
+                user_n_referrals={this.state.n_referral}
+                />
+            </Grid2>
             <Grid2 xs={12} sm={4} justifyContent="center" display="flex" alignSelf="center">
             <ReferralPriceCard
                 referral_n_requirement={1}
                 price_title="60-day tricks! 🧠"
                 price_description="Scientific habit-building hacks!"
-                price_icon_url="asdas"
+                claim_url="asdas"
+                // claim_msg="CLaim!"
                 user_n_referrals={this.state.n_referral}
               />
             </Grid2>
-            <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
-              <ReferralPriceCard
-                referral_n_requirement={2}
-                price_title={"Global Communities"}
-                price_description={(<>Share+learn on <Slack color="plain"/> <Reddit color="plain"/> <FaDiscord size="24px" color="brand"/></>)}
-                price_icon_url="asdas"
-                user_n_referrals={this.state.n_referral}
-              />
-            </Grid2>
+                {/* price_description={(<>Groups of ~25 people (<Slack size="20px" color="plain"/> <WhatsappIcon size="20px" round={true}/> <TelegramIcon size="20px" round={true}/>)</>)} */}
             <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
               <ReferralPriceCard
                 referral_n_requirement={5}
-                price_title="Accountability partners"
-                price_description={(<>Groups of ~25 people (<Slack size="20px" color="plain"/> <WhatsappIcon size="20px" round={true}/> <TelegramIcon size="20px" round={true}/>)</>)}
-                price_icon_url="asdas"
+                price_title={"Global Communities 🌍"}
+                price_description={(<>Meet Habitopians from all 🌍!</>)}
+                claim_url="https://habitopiacommunity.slack.com/join/shared_invite/zt-1lt38wv80-n0TkCJLFIqawySgipex1~A"
+                claim_msg="Join!"
                 user_n_referrals={this.state.n_referral}
               />
             </Grid2>
             <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
             <ReferralPriceCard
                   referral_n_requirement={10}
-                  price_title="Shout-out on social media"
-                  price_description="Twitter, Instagram, TikTok"
-                  price_icon_url="asdas"
+                  price_title={(<>Shout-out on <TwitterIcon size="20px" color="plain" round={true}/> <Instagram size="20px"/> <RedditIcon size="20px" round={true}/></>)}
+                  price_description="Be globally known by the community!"
+                  claim_url="asdas"
                   user_n_referrals={this.state.n_referral}
-                />
+                  />
             </Grid2>
+                  {/* // price_description="Be known by the community! " */}
+            {/* <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
+              <ReferralPriceCard
+                referral_n_requirement={25}
+                price_title={(<><img src={HabitopiaLogoBlack} style={{height: "25px"}}/> beta key 🔑🤫</>)}
+                price_description={"Habit-building made easy and fun."}
+                claim_url="asdas"
+                user_n_referrals={this.state.n_referral}
+              />
+            </Grid2>             */}
             <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
               <ReferralPriceCard
                 referral_n_requirement={25}
-                price_title="Habitopia beta key"
+                price_title="Exclusive access key 🔑🤫"
                 price_description={"Habit-building made easy and fun."}
-                price_icon_url="asdas"
+                claim_url="asdas"
                 user_n_referrals={this.state.n_referral}
               />
             </Grid2>

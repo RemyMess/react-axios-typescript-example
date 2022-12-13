@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 import { Lock } from 'grommet-icons';
+import { isThisTypeNode } from "typescript";
 
 interface Props {
   referral_n_requirement: number;
@@ -12,6 +13,7 @@ interface Props {
   price_description: any;
   price_icon_url?: string;
   claim_url?: string;
+  claim_msg?: string;
   user_n_referrals: number;
 }
 
@@ -21,21 +23,40 @@ export default class ReferralPriceCard extends Component<Props> {
   }
 
   render() {
+    let isAvailable = (this.props.user_n_referrals >= this.props.referral_n_requirement);
+    let claimMsg = "Claim!";
+    if(this.props.claim_msg){
+      claimMsg = this.props.claim_msg
+    }
+
     return (
         <>
         <Box 
-          style={{
-            width: 250,
-            height: 200,
-            borderRadius: 10,
-            backgroundColor: '#DDDDDD',
-            justifyContent: "center",
-            }}
+          style={
+            isAvailable 
+            ? {
+              width: 250,
+              height: 200,
+              borderRadius: 10,
+              backgroundColor: '#63d83a',
+              justifyContent: "center",
+              }
+              : {
+              width: 250,
+              height: 200,
+              borderRadius: 10,
+              backgroundColor: '#DDDDDD',
+              justifyContent: "center",
+              }
+            }
           direction="column"
           hoverIndicator={true}
           // justify="center"
           >
-            <Text alignSelf="center" size="16px">{this.props.referral_n_requirement} friend(s) joining =</Text>
+            {(this.props.referral_n_requirement == 0) || (
+              <Text alignSelf="center" size="16px">{this.props.referral_n_requirement} friend(s) joining =</Text>
+            )
+            }
             <Text alignSelf="center" size="18px" weight="bold" margin={{top: "10px"}}>{this.props.price_title}</Text>
             
             <Box alignSelf="center">
@@ -50,7 +71,7 @@ export default class ReferralPriceCard extends Component<Props> {
 
 
 
-            {(this.props.user_n_referrals > this.props.referral_n_requirement) ?
+            {isAvailable ?
               (
                 <Box
                 background="orange"
@@ -66,12 +87,16 @@ export default class ReferralPriceCard extends Component<Props> {
                 direction="column"
                 onClick={()=>{}}
               >
-              <Text alignSelf="center" weight="bold">Claim!</Text>
+                <Text alignSelf="center" weight="bold">
+                  <a href={this.props.claim_url}>
+                    {claimMsg}
+                  </a>
+                </Text>
             </Box>
               ) :
               (
               <Box
-                background="orange"
+                background="grey"
                 round="xsmall"
                 pad="xsmall"
                 height="50px"
@@ -79,12 +104,12 @@ export default class ReferralPriceCard extends Component<Props> {
                 justify="center"
                 alignSelf="center"
                 focusIndicator={true}
-                hoverIndicator="#D2FF09"
+                hoverIndicator={false}
                 margin={{ top: "15px" }}
                 direction="column"
                 onClick={()=>{}}
               >
-              <Text alignSelf="center" >Claim <Lock size="14px"/></Text>
+              <Text alignSelf="center" >Locked <Lock size="14px"/></Text>
               </Box>
               ) 
               }
