@@ -76,7 +76,7 @@ export default class LandingPage extends Component<Props, State> {
     const { submitted, title, description } = this.state;
 
     return (
-      <Box margin={{bottom: "80px"}}>
+      <Box>
         {(submitted && (this.state.email_id!== "")) ? (
           <>
             <Redirect to={"/referrals/" + this.state.email_id} />
@@ -102,7 +102,7 @@ export default class LandingPage extends Component<Props, State> {
                 ? {
                   width: "100%",
                   height: "100%",
-                  backgroundColor: 'white',
+                  // backgroundColor: 'white',
                   textAlign: "center", //horizontal
                   marginBottom: "12px",
                   marginLeft: "0px",
@@ -115,7 +115,7 @@ export default class LandingPage extends Component<Props, State> {
                 : {
                   width: "100%",
                   height: "100%",
-                  backgroundColor: 'white',
+                  // backgroundColor: 'white',
                   textAlign: "center", //horizontal
                   marginBottom: "12px",
                   marginLeft: "15px",
@@ -154,7 +154,7 @@ export default class LandingPage extends Component<Props, State> {
                 onChange={this.onChangeTitle}
                 name="title"
                 placeholder="jeff@bezos.com"
-                style={{borderRadius: 5, height: "30px", fontSize: "18px"}}
+                style={{borderRadius: 4, height: "30px", fontSize: "18px", transition: "0.3s"}}
               />
             <Button 
               style={
@@ -180,7 +180,7 @@ export default class LandingPage extends Component<Props, State> {
               disabled={!this.state.isEmail}
               hoverIndicator={"black"}
               size="2-0px"
-              margin={this.state.isMobile ? {top:'5px'} : {left: "1px"}}
+              margin={this.state.isMobile ? {top:'5px', bottom: "50px"} : {left: "1px", bottom: "200px"}}
               
                 // '&:hover': {
                 // backgroundColor: 'primary.main',

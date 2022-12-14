@@ -135,7 +135,7 @@ export default class ReferralsPage extends Component<Props, State> {
 
             {/* Section */}
             <Grid2 container spacing={3} justifyContent="center" paddingLeft={"20px"} paddingRight={"20px"} direction={this.state.isMobile ? "column" : "row"}
-              style={{background: "#DDDDDD"}}
+              // style={{background: "#DDDDDD"}}
             >
             <Box
                   style={
@@ -155,8 +155,8 @@ export default class ReferralsPage extends Component<Props, State> {
                   > */}
                     <img src={AccountabilityImage} width="450px" style={
                       this.state.isMobile 
-                      ? {alignSelf: "center", justifySelf: "center", alignItems: "center"}
-                      : {alignSelf: "center", justifySelf: "center", alignItems: "center", marginTop: "50px"}
+                      ? {alignSelf: "center", justifySelf: "center", alignItems: "center", borderRadius: "30px"}
+                      : {alignSelf: "center", justifySelf: "center", alignItems: "center", borderRadius: "30px", marginTop: "50px"}
                       }/> 
                 {/* </video> */}
 
@@ -198,7 +198,7 @@ export default class ReferralsPage extends Component<Props, State> {
 
                 <Box direction={this.state.isMobile ? "column" : "row"} justify="center"
                 >
-                  <input type="text" value = {this.state.share_url} style={{borderRadius: "2px"}}/>
+                  <input type="text" value = {this.state.share_url} style={{borderRadius: "5px"}}/>
                   <Box onClick={() => {
                       navigator.clipboard.writeText(this.state.share_url);
                     }}
@@ -288,24 +288,24 @@ export default class ReferralsPage extends Component<Props, State> {
                 user_n_referrals={this.state.n_referral}
                 />
             </Grid2>
-            <Grid2 xs={12} sm={4} justifyContent="center" display="flex" alignSelf="center">
-            <ReferralPriceCard
-                referral_n_requirement={1}
-                price_title="60-day tricks! 🧠"
-                price_description="Scientific habit-building hacks!"
-                claim_url="asdas"
-                // claim_msg="CLaim!"
-                user_n_referrals={this.state.n_referral}
-              />
-            </Grid2>
                 {/* price_description={(<>Groups of ~25 people (<Slack size="20px" color="plain"/> <WhatsappIcon size="20px" round={true}/> <TelegramIcon size="20px" round={true}/>)</>)} */}
             <Grid2 xs={12} sm={4} justifyContent="center" display="flex">
               <ReferralPriceCard
-                referral_n_requirement={5}
+                referral_n_requirement={1}
                 price_title={"Global Communities 🌍"}
-                price_description={(<>Meet Habitopians from all 🌍!</>)}
-                claim_url="https://habitopiacommunity.slack.com/join/shared_invite/zt-1lt38wv80-n0TkCJLFIqawySgipex1~A"
+                price_description={(<>Meet habit-builders from all 🌍!</>)}
+                claim_url="https://chat.whatsapp.com/Jw3HCIYeKJz5bDjX1d7Njr"
                 claim_msg="Join!"
+                user_n_referrals={this.state.n_referral}
+              />
+            </Grid2>
+            <Grid2 xs={12} sm={4} justifyContent="center" display="flex" alignSelf="center">
+            <ReferralPriceCard
+                referral_n_requirement={5}
+                price_title="60-day tricks! 🧠"
+                price_description="Science-backed habit-building hacks!"
+                claim_url="asdas"
+                // claim_msg="CLaim!"
                 user_n_referrals={this.state.n_referral}
               />
             </Grid2>
@@ -333,7 +333,7 @@ export default class ReferralsPage extends Component<Props, State> {
                 referral_n_requirement={25}
                 price_title="Exclusive access key 🔑🤫"
                 price_description={"Habit-building made easy and fun."}
-                claim_url="asdas"
+                claim_url="https://www.producthunt.com/upcoming/habitopia"
                 user_n_referrals={this.state.n_referral}
               />
             </Grid2>

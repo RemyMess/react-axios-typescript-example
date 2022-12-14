@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
-// import "./App.css";
+import "./App.css";
 
 import ReferralsPage from "./Views/ReferralsPage";
 import LandingPage from "./Views/LandingPage";
@@ -9,7 +9,7 @@ import LandingPage from "./Views/LandingPage";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="global_box">
         {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/tutorials"} className="navbar-brand">
             bezKoder
