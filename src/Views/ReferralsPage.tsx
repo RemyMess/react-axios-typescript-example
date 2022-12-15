@@ -223,7 +223,7 @@ export default class ReferralsPage extends Component<Props, State> {
                   <Box direction="row" justify="center">
                     <WhatsappShareButton
                         url={this.state.share_url}
-                        title={"er"}>
+                        title={"Hey! I just found a cool suit of tools making sticking to New Years' resolutions easy: check it out!"}>
                         <WhatsappIcon
                           size={40}
                           round />
@@ -231,7 +231,7 @@ export default class ReferralsPage extends Component<Props, State> {
 
                     <TwitterShareButton
                       url={this.state.share_url}
-                      title={"er"}>
+                      title={"Hey! I just found a cool suit of tools making sticking to New Years' resolutions easy: check it out!"}>
                       <TwitterIcon
                         size={40}
                         round />
@@ -239,7 +239,7 @@ export default class ReferralsPage extends Component<Props, State> {
 
                     <TelegramShareButton
                       url={this.state.share_url}
-                      title={"er"}>
+                      title={"Hey! I just found a cool suit of tools making sticking to New Years' resolutions easy: check it out!"}>
                       <TelegramIcon
                         size={40}
                         round />

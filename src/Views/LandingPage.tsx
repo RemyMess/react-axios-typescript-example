@@ -128,7 +128,7 @@ export default class LandingPage extends Component<Props, State> {
             }
           >
             <Text color="black" margin={{top: "40px", bottom: "15px"}} weight="bold" size="32px">
-              We're aiming to make 90% of you stick with your 2023 resolutions for 2 months.
+              We aim to make 90% of you stick with your 2023 resolutions for 2 months.
             </Text>
           </Box>
           
@@ -172,13 +172,13 @@ export default class LandingPage extends Component<Props, State> {
                 width: "170px",
                 height: "35px",
                 textAlign: "center",
-                borderRadius: 5
+                borderRadius: 5,
               }}
               alignSelf={this.state.isMobile ? "center" : "start"}
               justify="center"
               focusIndicator={true}
               disabled={!this.state.isEmail}
-              hoverIndicator={"black"}
+              hoverIndicator="black"
               size="2-0px"
               margin={this.state.isMobile ? {top:'5px', bottom: "50px"} : {left: "1px", bottom: "200px"}}
               
