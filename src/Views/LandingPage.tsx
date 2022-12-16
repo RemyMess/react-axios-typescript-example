@@ -76,7 +76,8 @@ export default class LandingPage extends Component<Props, State> {
     const { submitted, title, description } = this.state;
 
     return (
-      <Box>
+      <Box              
+      >
         {(submitted && (this.state.email_id!== "")) ? (
           <>
             <Redirect to={"/referrals/" + this.state.email_id} />
