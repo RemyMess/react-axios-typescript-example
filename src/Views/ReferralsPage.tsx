@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import { useLocation } from "react-router-dom"
 import { EmailService } from "../services/firebase";
 import { Text, Box, Button } from 'grommet';
+import ReactGA from 'react-ga';
 
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ReferralPriceCard from "../components/ReferralPriceCard";
@@ -79,6 +80,7 @@ export default class ReferralsPage extends Component<Props, State> {
   }
 
   componentDidMount() {
+    reactGA.pageview(window.location.pathname)
     if(this.state.id !==""){
         EmailService.getNumberReferrals(this.state.id).then(
             (res: any) => {
@@ -91,6 +93,7 @@ export default class ReferralsPage extends Component<Props, State> {
   }
 
 
+  
   render() {
 
     return (

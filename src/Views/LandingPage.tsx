@@ -1,4 +1,4 @@
-import { Component, ChangeEvent } from "react";
+import { Component, ChangeEvent, useEffect } from "react";
 import TutorialDataService from "../services/tutorial.service";
 import ITutorialData from '../types/tutorial.type';
 import { Redirect } from "react-router-dom";
@@ -42,6 +42,10 @@ export default class LandingPage extends Component<Props, State> {
     };
   }
 
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
+  }
+
   onChangeTitle(e: ChangeEvent<HTMLInputElement>) {
     this.setState({
       title: e.target.value
@@ -67,7 +71,7 @@ export default class LandingPage extends Component<Props, State> {
     EmailService.register(email).then( (res) => {
       ReactGA.event({
         category: 'User',
-        action: 'Logged in'
+        action: 'Step in'
       });
       if(this.state.referral_id !== ""){
           EmailService.incrementReferral(this.state.referral_id)
