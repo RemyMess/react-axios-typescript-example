@@ -80,7 +80,7 @@ export default class ReferralsPage extends Component<Props, State> {
   }
 
   componentDidMount() {
-    reactGA.pageview(window.location.pathname)
+    ReactGA.pageview(window.location.pathname)
     if(this.state.id !==""){
         EmailService.getNumberReferrals(this.state.id).then(
             (res: any) => {

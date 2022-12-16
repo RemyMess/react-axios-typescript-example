@@ -139,12 +139,16 @@ export default class LandingPage extends Component<Props, State> {
           >
             <Text color="black" margin={{top: "40px", bottom: "15px"}} weight="bold" size="32px">
               {/* Make yourself 91% more likely to stick with your 2023 resolutions for 2 months. */}
-              We help you stick with your 2023 resolutions or build a new habit in 30 days for free.
+              We help you build any habits in 30 days for free.
             </Text>
           </Box>
           
           <Box style={{justifyContent: "center"}} width="100%">
-              <video 
+
+            <img src={"/mountain.png"} style={{width: "75%", alignSelf: "center", marginBottom: "30px", borderRadius: "10px"}}/>
+
+
+              {/* <video 
               autoPlay loop muted playsInline
               style={
                 this.state.isMobile 
@@ -153,7 +157,7 @@ export default class LandingPage extends Component<Props, State> {
               }
               >
                 <source src="/ezgif.com-gif-maker.mp4" type="video/mp4"/> 
-              </video>
+              </video> */}
           </Box>
           <Box direction={this.state.isMobile ? "column" : "row"}
             style={(this.state.isMobile) ? {justifyContent: "center", marginLeft: "10px", marginRight: "10px"} : {justifyContent: "center"}}>
@@ -164,7 +168,7 @@ export default class LandingPage extends Component<Props, State> {
                 value={title}
                 onChange={this.onChangeTitle}
                 name="title"
-                placeholder="jeff@bezos.com"
+                placeholder="warren@buffet.com"
                 style={{borderRadius: 4, height: "30px", fontSize: "18px", transition: "0.3s"}}
               />
             <Button 
