@@ -5,6 +5,13 @@ import "./App.css";
 
 import ReferralsPage from "./Views/ReferralsPage";
 import LandingPage from "./Views/LandingPage";
+import ReactGA from 'react-ga';
+
+
+
+const TRACKING_ID = "G-VNMGQX5HPH"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 class App extends Component {
   render() {

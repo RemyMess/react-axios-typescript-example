@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom"
 import { EmailService } from "../services/firebase";
 import { Text, Box, Button } from 'grommet';
 import { Lock } from 'grommet-icons';
+import ReactGA from 'react-ga';
 
 type State = ITutorialData & {
   submitted: boolean,
@@ -64,6 +65,10 @@ export default class LandingPage extends Component<Props, State> {
 
   submitRegistration(email: string) {
     EmailService.register(email).then( (res) => {
+      ReactGA.event({
+        category: 'User',
+        action: 'Logged in'
+      });
       if(this.state.referral_id !== ""){
           EmailService.incrementReferral(this.state.referral_id)
         }
