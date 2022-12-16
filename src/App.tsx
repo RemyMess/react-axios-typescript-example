@@ -8,12 +8,13 @@ import LandingPage from "./Views/LandingPage";
 import ReactGA from 'react-ga';
 
 
-const TRACKING_ID = "G-VNMGQX5HPH";
-ReactGA.initialize(TRACKING_ID);
 
 
 class App extends Component {
   render() {
+    const TRACKING_ID = "G-VNMGQX5HPH";
+    ReactGA.initialize(TRACKING_ID);
+    
     return (
       <div className="global_box">
         {/* <nav className="navbar navbar-expand navbar-dark bg-dark">

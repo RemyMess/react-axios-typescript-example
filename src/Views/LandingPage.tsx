@@ -139,7 +139,7 @@ export default class LandingPage extends Component<Props, State> {
           >
             <Text color="black" margin={{top: "40px", bottom: "15px"}} weight="bold" size="32px">
               {/* Make yourself 91% more likely to stick with your 2023 resolutions for 2 months. */}
-              We help you build any habits in 30 days for free.
+              We help you build your dream habits in 30 days for free.
             </Text>
           </Box>
           
