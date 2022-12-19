@@ -307,7 +307,7 @@ export default class ReferralsPage extends Component<Props, State> {
                 referral_n_requirement={5}
                 price_title="60-day tricks! 🧠"
                 price_description="Science-backed habit-building hacks!"
-                claim_url="asdas"
+                claim_url="https://habitopia.ghost.io/"
                 // claim_msg="CLaim!"
                 user_n_referrals={this.state.n_referral}
               />
